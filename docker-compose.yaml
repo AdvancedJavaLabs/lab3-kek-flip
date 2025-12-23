@@ -1,0 +1,9 @@
+services:
+  hadoop:
+    build:
+      context: .
+      dockerfile: hadoop/Dockerfile
+    ports:
+      - "9870:9870"
+    volumes:
+      - ./results:/results
