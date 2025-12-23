@@ -21,7 +21,6 @@ public class AggrMapper extends Mapper<LongWritable, Text, Text, AggrWritable> {
         if (csvEntry == null) {
             return;
         }
-        csvEntry = csvEntry.trim();
 
         if (csvEntry.isBlank() || csvEntry.equals(HEADER)) {
             return;
@@ -32,9 +31,9 @@ public class AggrMapper extends Mapper<LongWritable, Text, Text, AggrWritable> {
             return;
         }
 
-        String category = tokens[CATEGORY_INDEX].trim();
-        double price = Double.parseDouble(tokens[PRICE_INDEX].trim());
-        long quantity = Long.parseLong(tokens[QUANTITY_INDEX].trim());
+        String category = tokens[CATEGORY_INDEX];
+        double price = Double.parseDouble(tokens[PRICE_INDEX]);
+        long quantity = Long.parseLong(tokens[QUANTITY_INDEX]);
 
         categoryWritable.set(category);
         salesWritable.setRevenue(price * quantity);

@@ -19,9 +19,9 @@ public class SortMapper extends Mapper<LongWritable, Text, DoubleWritable, Sorte
         }
 
         String[] tokens = line.split("#");
-        String category = tokens[0].trim();
-        double revenue = Double.parseDouble(tokens[1].trim());
-        long quantity = Long.parseLong(tokens[2].trim());
+        String category = tokens[0];
+        double revenue = Double.parseDouble(tokens[1]);
+        long quantity = Long.parseLong(tokens[2]);
 
         revenueWritable.set(revenue);
         sortedSalesWritable.setCategory(category);
