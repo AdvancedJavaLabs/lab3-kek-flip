@@ -1,7 +1,7 @@
 package org.itmo;
 
 import org.apache.hadoop.conf.Configuration;
-import org.itmo.sales.SalesJob;
+import org.itmo.aggr.AggrJob;
 import org.itmo.sort.SortJob;
 
 import java.io.IOException;
@@ -17,7 +17,7 @@ public class MainJob {
         Integer numReduceTasks = Integer.parseInt(args[0]);
         String mapredOut = "mapred_out";
 
-        int salesJobResult = SalesJob.run(conf, numReduceTasks, mapredOut, Arrays.copyOfRange(args, 3, args.length));
+        int salesJobResult = AggrJob.run(conf, numReduceTasks, mapredOut, Arrays.copyOfRange(args, 3, args.length));
         if (salesJobResult != 0) {
             System.exit(salesJobResult);
         }

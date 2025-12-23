@@ -1,4 +1,4 @@
-package org.itmo.sales;
+package org.itmo.aggr;
 
 import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.LongWritable;
@@ -8,11 +8,11 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class SalesWritable implements Writable {
+public class AggrWritable implements Writable {
     private final DoubleWritable revenueWritable = new DoubleWritable();
     private final LongWritable quantityWritable = new LongWritable();
 
-    public SalesWritable() {
+    public AggrWritable() {
     }
 
     public void setRevenue(double revenue) {

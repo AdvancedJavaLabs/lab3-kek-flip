@@ -1,15 +1,15 @@
-package org.itmo.sales;
+package org.itmo.aggr;
 
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
 
-public class SalesReducer extends Reducer<Text, SalesWritable, Text, SalesWritable> {
-    SalesWritable salesWritable = new SalesWritable();
+public class AggrReducer extends Reducer<Text, AggrWritable, Text, AggrWritable> {
+    AggrWritable salesWritable = new AggrWritable();
 
     @Override
-    protected void reduce(Text key, Iterable<SalesWritable> values, Context context) throws IOException, InterruptedException {
+    protected void reduce(Text key, Iterable<AggrWritable> values, Context context) throws IOException, InterruptedException {
         double ttlRevenue = 0.0;
         long ttlQuantity = 0L;
 
